@@ -1,0 +1,8 @@
+.tb-debug {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  z-index: 999;
+  color: var(--light);
+  white-space: pre-line;
+}

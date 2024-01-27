@@ -1,0 +1,6 @@
+.tb-command {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--highlight);
+}

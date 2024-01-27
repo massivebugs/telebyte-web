@@ -1,0 +1,7 @@
+.tb-orientation-box {
+  position: absolute;
+  border: 7px solid var(--light);
+  background-color: var(--subdued);
+  width: 150px;
+  height: 150px;
+}

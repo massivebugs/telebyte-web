@@ -1,0 +1,35 @@
+.tb-start-btn {
+  /* Button reset */
+  background: none;
+  color: inherit;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  padding: 1em;
+  font-size: 1.7em;
+  color: var(--light);
+  text-shadow: 0 0 2px var(--dark), -3px 3px var(--accent);
+  box-shadow: 0 0 0 2px var(--accent), -10px 10px 0 5px var(--accent);
+}
+
+.tb-start-btn:after {
+  content: "";
+  background: var(--light);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(100%, 100%);
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.tb-start-btn:active:after {
+  transform: scale(0, 0);
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
