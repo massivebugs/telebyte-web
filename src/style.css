@@ -7,6 +7,10 @@
   --dark: #00272bff; /*gunmetal*/
 }
 
+body {
+  overflow: hidden;
+}
+
 #app {
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;

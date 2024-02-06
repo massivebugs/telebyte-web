@@ -7,3 +7,10 @@ box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 
 netsh interface portproxy add v4tov4 listenport=5173 listenaddress=0.0.0.0 connectport=5173 connectaddress=172.29.202.195
 
 https://zenn.dev/miyatom/articles/f0c8161d237d4c
+
+
+
+
+// SKYWAY
+// Subscribe a Remote Member
+// https://skyway.ntt.com/en/docs/user-guide/javascript-sdk/tips/#66

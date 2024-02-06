@@ -29,3 +29,15 @@ export const runTransition = (
     });
   });
 };
+
+export async function getJSON(url: string): Promise<any> {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch file: ${response.status} ${response.statusText}`
+    );
+  }
+
+  return await response.json();
+}

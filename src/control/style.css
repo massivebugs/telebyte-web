@@ -1,6 +1,6 @@
-.tb-command {
+.tb-control {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--highlight);
+  background-color: var(--dark);
 }

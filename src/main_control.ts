@@ -3,16 +3,19 @@ import { setupDeviceOrientation } from "./sensor/script";
 import { setupSplash } from "./splash/script";
 import { setupDebug } from "./debug/script";
 import { setupControl } from "./control/script";
+import { getJSON } from "./util";
 import "./style.css";
 import "./debug/style.css";
 import "./splash/style.css";
 import "./control/style.css";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+  const agentToken = await getJSON("/host-token.json");
+
   const onStart = () => {
     debug.destroy();
     splash.destroy();
-    setupControl(appEl, ["tb-screen"], "swipe");
+    setupControl(appEl, ["tb-screen"], "swipe", agentToken.token);
   };
 
   const appEl = document.querySelector<HTMLElement>("#app")!;
