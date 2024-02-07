@@ -1,6 +1,13 @@
 .tb-control {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--dark);
+}
+
+.tb-control .tb-loading-spinner {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
 }
