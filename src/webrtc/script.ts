@@ -17,10 +17,11 @@ export type MemberType = (typeof MemberType)[keyof typeof MemberType];
 export const setupP2PWebRTC = async (
   memberType: MemberType,
   remoteVideoEl: HTMLVideoElement,
-  token: string
+  token: string,
+  onWaiting = () => {},
+  onCallStart = () => {}
 ) => {
   const streams = await getLocalStreams();
-
   const context = await SkyWayContext.Create(token);
 
   let room: P2PRoom;
@@ -42,6 +43,13 @@ export const setupP2PWebRTC = async (
   const me = await room.join({ name: memberType });
   const audioPub = await me.publish(streams.audio);
   const videoPub = await me.publish(streams.video);
+
+  onWaiting();
+
+  room.onMemberJoined.add((e) => {
+    if (e.member.id === me.id) return;
+    onCallStart();
+  });
 
   if (memberType === MemberType.Host) {
     const checkForAgent = async () => {
